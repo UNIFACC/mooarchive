@@ -32,3 +32,5 @@ def processamento(categorias, categoria):
         disciplinas = lista_disciplinas(categoria)
         altera_visibilidade(disciplinas)
         arquiva_disciplinas(disciplinas, categoria)
+
+processamento(ids_categorias, arquivar_em)
