@@ -21,4 +21,8 @@ def altera_visibilidade(disciplinas):
     for disciplina in disciplinas:
         cmd = f'sudo moosh -n course-config-set course {disciplina} visible 0'
         p = subprocess.Popen(cmd, stdout=subprocess.PIPE, shell=True)
-    
+
+def arquiva_disciplinas(disciplinas, categoria_a_arquivar):
+    for disciplina in disciplinas:
+        cmd = f'sudo moosh -n course-config-set course {disciplina} category {categoria_a_arquivar}'
+        p = subprocess.Popen(cmd, stdout=subprocess.PIPE, shell=True)
