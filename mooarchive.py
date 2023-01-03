@@ -12,4 +12,7 @@ def lista_disciplinas(categoria: int):
     cmd = f'sudo moosh -n course-list -c {str(categoria)} -i'
     p = subprocess.Popen(cmd, stdout=subprocess.PIPE, shell=True)
     (output, err) = p.communicate()
-    return output
+    saida = output.decode("utf-8")
+    disciplinas = saida.split("\n")
+    disciplinas = disciplinas[ : -1]
+    return disciplinas
