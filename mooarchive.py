@@ -29,5 +29,6 @@ def arquiva_disciplinas(disciplinas, categoria_a_arquivar):
 
 def processamento(categorias, categoria):
     for categoria in categorias:
-        altera_visibilidade(lista_disciplinas(categoria))
-        arquiva_disciplinas(lista_disciplinas(categoria), categoria)
+        disciplinas = lista_disciplinas(categoria)
+        altera_visibilidade(disciplinas)
+        arquiva_disciplinas(disciplinas, categoria)
