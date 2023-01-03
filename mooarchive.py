@@ -26,3 +26,8 @@ def arquiva_disciplinas(disciplinas, categoria_a_arquivar):
     for disciplina in disciplinas:
         cmd = f'sudo moosh -n course-config-set course {disciplina} category {categoria_a_arquivar}'
         p = subprocess.Popen(cmd, stdout=subprocess.PIPE, shell=True)
+
+def processamento(categorias, categoria):
+    for categoria in categorias:
+        altera_visibilidade(lista_disciplinas(categoria))
+        arquiva_disciplinas(lista_disciplinas(categoria), categoria)
