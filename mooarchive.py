@@ -16,3 +16,9 @@ def lista_disciplinas(categoria: int):
     disciplinas = saida.split("\n")
     disciplinas = disciplinas[ : -1]
     return disciplinas
+
+def altera_visibilidade(disciplinas):
+    for disciplina in disciplinas:
+        cmd = f'sudo moosh -n course-config-set course {disciplina} visible 0'
+        p = subprocess.Popen(cmd, stdout=subprocess.PIPE, shell=True)
+    
